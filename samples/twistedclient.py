@@ -164,9 +164,10 @@ def onMessage(source, message):
 def onError(source, error):
     print 'Error: ', error
 
-
-if __name__ == '__main__':
+def main():
     factory = IPCClientFactory('user', 'pwd', onConnectSuccess, onConnectFail, onMessage, onError)
     reactor.connectTCP('localhost', 5000, factory)
     reactor.run()
 
+if __name__ == '__main__':
+    main()
