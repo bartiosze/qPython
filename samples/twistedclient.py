@@ -148,7 +148,7 @@ class IPCClientFactory(ClientFactory):
 
 def onConnectSuccess(source):
     print 'Connected, protocol version: ', source.client.protocol_version
-    source.query(MessageType.SYNC, '.z.ts:{(handle)((1000*(1 ? 100))[0] ? 100)}')
+    source.query(MessageType.SYNC, '.z.ts:{(handle)(time:2#.z.t; sym:2#`aaa;price:2?10.;size:2?500)}')
     source.query(MessageType.SYNC, '.u.sub:{[t;s] handle:: neg .z.w}')
     source.query(MessageType.ASYNC, '.u.sub', 'trade', '')
 
